@@ -1,0 +1,19 @@
+[project]
+name = "models-from-scratch"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Eduardo Fiscina Menezes Moraes", email = "eduardo.fm.moraes@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "numpy>=2.5.4",
+]
+
+[project.scripts]
+models-from-scratch = "models_from_scratch:main"
+
+[build-system]
+requires = ["uv_build>=0.13.6,<0.14.0"]
+build-backend = "uv_build"

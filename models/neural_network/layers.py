@@ -6,12 +6,17 @@ class Layer:
     def __init__(self):
         pass
 
+    def forward(self, X):
+        pass
+
+    def backward(self, dvalues):
+        pass
+
 class Dense(Layer):
     def __init__(self, n_inputs, size, activation_function: ActivationFunction = ReLU):
         super().__init__()
-        np.random.seed(42)
-        self.weights = np.random.randn(n_inputs, size)
-        self.biases = np.zeros((size,))
+        self.weights = 0.01 * np.random.randn(n_inputs, size)
+        self.biases = np.zeros((1, size))
         self.act_func = activation_function()
 
     def forward(self, X):

@@ -4,6 +4,12 @@ class ActivationFunction:
     def __init__(self):
         pass
 
+    def forward(self, X):
+        pass
+
+    def backward(self, dvalues):
+        pass
+
 class ReLU(ActivationFunction):
     def __init__(self):
         super().__init__()
@@ -20,8 +26,8 @@ class Softmax(ActivationFunction):
         super().__init__()
 
     def forward(self, X):
-        exp_values = np.exp(X - np.max(X, axis=-1).reshape(-1, 1))
-        return exp_values / np.sum(exp_values, axis=-1).reshape(-1, 1)
+        exp_values = np.exp(X - np.max(X, axis=-1, keepdims=True))
+        return exp_values / np.sum(exp_values, axis=-1, keepdims=True)
 
 class Sigmoid(ActivationFunction):
     def __init__(self):

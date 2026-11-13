@@ -107,7 +107,7 @@ print(nn.predict(X_test, y_test))  # acurácia no conjunto de teste
 - [x] Regressão Logística
 - [x] Rede Neural densa (MLP) com SGD + momentum
 - [ ] Regressão Linear (equação normal e gradient descent)
-- [ ] Backward de `Sigmoid`/`Linear` e perdas para regressão (MSE, MAE)
+- [x] Backward de `Sigmoid`/`Linear` e perdas para regressão (MSE, MAE)
 - [ ] Otimizadores: Adam, RMSProp, AdaGrad
 - [ ] Regularização (L1/L2) e Dropout
 - [ ] K-Nearest Neighbors

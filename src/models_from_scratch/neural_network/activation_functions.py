@@ -34,7 +34,12 @@ class Sigmoid(ActivationFunction):
         super().__init__()
 
     def forward(self, X):
-        return 1 / (1 + np.exp(-X))
+        self.inputs = X
+        self.outputs = 1 / (1 + np.exp(-X))
+        return self.outputs
+
+    def backward(self, dvalues):
+        return dvalues * self.outputs * (1 - self.outputs)
 
 class Linear(ActivationFunction):
     def __init__(self):
@@ -42,3 +47,6 @@ class Linear(ActivationFunction):
 
     def forward(self, X):
         return X
+
+    def backward(self, dvalues):
+        return dvalues
